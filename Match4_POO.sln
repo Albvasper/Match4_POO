@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Match4_POO", "Match4_POO\Match4_POO.vcxproj", "{FE3393A2-5688-4902-BAC3-B385BC2B09E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Debug|x64.ActiveCfg = Debug|x64
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Debug|x64.Build.0 = Debug|x64
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Debug|x86.Build.0 = Debug|Win32
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Release|x64.ActiveCfg = Release|x64
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Release|x64.Build.0 = Release|x64
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Release|x86.ActiveCfg = Release|Win32
+		{FE3393A2-5688-4902-BAC3-B385BC2B09E3}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A3E84702-C391-4DD1-A3F3-965412564730}
+	EndGlobalSection
+EndGlobal
