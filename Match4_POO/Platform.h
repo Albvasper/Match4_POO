@@ -16,7 +16,7 @@ class Platform {
 
 	public:
 		static SDL_Renderer* renderer;									//Pointer to the SDL renderer
-		Platform(std::string name);										//Constructor that recives a name
+		Platform(std::string name);										//Constructor that recives a name for the window
 		void RenderClear();												//Method that clears the renderer
 		//void RenderImage(Image* image, int x, int y, float angle);	//Method that renders an image
 		void RenderPresent();											//Method that updates the screen with any rendering performed
