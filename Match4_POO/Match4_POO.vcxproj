@@ -154,12 +154,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStateManager.cpp" />
     <ClCompile Include="Match4_POO.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Platform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="Menu.h" />

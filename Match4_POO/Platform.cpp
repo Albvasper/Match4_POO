@@ -4,8 +4,8 @@ SDL_Renderer* Platform::renderer;
 
 Platform::Platform(std::string name) {
 	//Window size
-	width = 640;
-	height = 480;
+	width = 1920;
+	height = 1080;
 
 	//SDL window logic
 	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
