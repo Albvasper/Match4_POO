@@ -38,20 +38,6 @@ void Platform::RenderPresent()
 	SDL_RenderPresent(renderer);
 }
 
-
-void Platform::DrawRect(int x, int y, int w, int h)
-{
-	SDL_Rect rect;
-	rect.x = x;
-	rect.y = y;
-	rect.w = w;
-	rect.h = h;
-	SDL_SetRenderDrawColor(renderer, 0, 0, 255, 255);
-	SDL_RenderFillRect(renderer, &rect);
-	SDL_RenderDrawRect(renderer, &rect);
-
-}
-
 //void Platform::RenderImage(Image* image, int x, int y, float angle)
 //{
 //	RenderTexture(image, x, y, angle);
