@@ -10,12 +10,12 @@ void GameStateManager::GameLoop() {
 	while (true) {
 		try {
 			//if there are no states in the stack 
-			if (states.size() == 0) {	
+			if (states.getSize() == 0) {	
 				//Throw an error
 				throw std::exception("Error");	
 			}
 			//Take the state that is on top of the stack
-			auto state = states.top();
+			auto state = states.first->data;
 			//Check for an event
 			platform->CheckEvent(state, &GameState::Input);
 			//Update the current state
@@ -42,7 +42,7 @@ void GameStateManager::SetState(GameState* state) {
 
 void GameStateManager::RealaseState() {
 	//Take the state that is at the top of the stack
-	auto state = states.top();
+	auto state = states.first->data;
 	//Close the current state
 	state->Close();
 	//Pop it from the stack

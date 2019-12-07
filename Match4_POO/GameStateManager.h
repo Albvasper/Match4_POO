@@ -1,14 +1,15 @@
 #pragma once
 #include "GameState.h"
 #include "Platform.h"
-#include <stack>
-
+//#include <stack>
+#include "Stack.h"
 class GameState;
 
 class GameStateManager {
 
 	private:
-		std::stack<GameState*> states;		//Container that stores game states
+		//std::stack<GameState*> states;		//Container that stores game states
+		Stack<GameState*> states;
 		Platform* platform;					//Pointer to platform
 
 	public:
