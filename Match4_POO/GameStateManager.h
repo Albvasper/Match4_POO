@@ -8,8 +8,8 @@ class GameState;
 class GameStateManager {
 
 	private:
-		//std::stack<GameState*> states;		//Container that stores game states
-		Stack<GameState*> states;
+		//std::stack<GameState*> states;		
+		Stack<GameState*> states;			//Container that stores game states
 		Platform* platform;					//Pointer to platform
 
 	public:

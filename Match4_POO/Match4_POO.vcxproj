@@ -157,6 +157,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameStateManager.cpp" />
     <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="GraphNode.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Match4_POO.cpp" />
     <ClCompile Include="Menu.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphNode.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Node.h" />

@@ -1,13 +1,15 @@
 #pragma once
-#include "Node.h"
+#include "GraphNode.h"
 #include "List.h"
+#include "GraphNode.h"
+//#include "Node.h"
 
 template <class T> class Graph {
 
 	public:
-		List<Node<T>*> fathers;
 		Graph();
-		void Insert(T val, Node<T>* father);
+		List<GraphNode<T>*> fathers;
+		void Insert(T val, GraphNode<T>* father);
 		Node<T>* search(T val);
 		void deleteN(T val);
 		void print();
@@ -17,18 +19,17 @@ template <class T> class Graph {
 template <class T> Graph<T>::Graph() {
 }
 
-
-template <class T> void Graph<T>::Insert(T val, Node<T>* father) {
+template <class T> void Graph<T>::Insert(T val, GraphNode<T>* father) {
 	father->children.push_back(new Node<T>(val));
 }
 
 template <class T> Node<T>* Graph<T>::search(T val) {
-	Node<T>* it = fathers.first;
+	GraphNode<T>* it = fathers.first;
 	while (it != NULL) {
 		if (it->visited == false) {
 			if (it->children != NULL) {
 				//Tiene children y no ha sido visitado
-				Node<T>* it2 = it->children.first;
+				GraphNode<T>* it2 = it->children.first;
 				for (int i = 0; i < it->children.size; i++) {
 					if (it2->nodeData == val) {
 						return it2;
@@ -50,17 +51,17 @@ template <class T> Node<T>* Graph<T>::search(T val) {
 }
 
 template <class T> void Graph<T>::deleteN(T val) {
-	Node<T>* it = fathers.first;
+	GraphNode<T>* it = fathers.first;
 	//Se insertan en otro nodo los hijos del nodo borrado
 	while (it != NULL) {
 		if (it->visited == false) {
 			if (it->children != NULL) {
 				//Tiene children y no ha sido visitado
 				if (it->NodeData == val) {
-					new Node<T>->children = it->children;
+					new GraphNode<T>->children = it->children;
 					return;
 				}
-				Node<T>* it2 = it->children.first;
+				GraphNode<T>* it2 = it->children.first;
 				for (int i = 0; i < it->children.size; i++) {
 					if (it2->nodeData == val) {
 						it2->nodeData = NULL;
@@ -83,7 +84,7 @@ template <class T> void Graph<T>::deleteN(T val) {
 }
 
 template <class T> void Graph<T>::print() {
-	//Node<T>* it = fathers.first;
+	//GraphNode<T>* it = fathers.first;
 	//for (int i = 0; i < fathers.size; i++) {
 	//	std::cout << i << ": " << it->nodeData << std::endl;
 	//}

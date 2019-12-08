@@ -20,6 +20,7 @@ template <class T> class Stack {
 template <class T> Stack<T>::Stack() {
 	first = NULL;
 	last = NULL;
+	tmp = NULL;
 	size = 0;
 }
 
