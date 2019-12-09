@@ -2,7 +2,7 @@
 #include "GraphNode.h"
 #include "List.h"
 #include "GraphNode.h"
-//#include "Node.h"
+#include "Node.h"
 
 template <class T> class Graph {
 

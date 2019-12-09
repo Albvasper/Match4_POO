@@ -1,6 +1,7 @@
 #include "SDL.h"
 #include "GameStateManager.h"
 #include "Menu.h"
+#include <windows.h>
 
 int main(int argc, char* argv[]) {
 	//New game state manager called "manager"

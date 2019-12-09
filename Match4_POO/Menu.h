@@ -1,12 +1,13 @@
 #pragma once
 #include "GameState.h"
 #include "GameStateManager.h"
+#include "Sprite.h"
 
 class Menu : public GameState {
 
 	private:
 		Platform* platform;														//Pointer to platform
-		//Image* background;													//Background image for the state
+		Sprite* background;													//Background image for the state
 		GameStateManager* manager;												//Pointer to the manager
 
 	public:

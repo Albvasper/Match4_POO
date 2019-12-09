@@ -35,22 +35,19 @@ void Platform::RenderPresent() {
 	SDL_RenderPresent(renderer);
 }
 
-//void Platform::RenderImage(Image* image, int x, int y, float angle)
-//{
-//	RenderTexture(image, x, y, angle);
-//
-//}
-//
-//void Platform::RenderTexture(Image* image, int x, int y, double a)
-//{
-//	SDL_Rect srcrect;
-//	srcrect.x = x;
-//	srcrect.y = y;
-//	srcrect.w = image->GetWidth();
-//	srcrect.h = image->GetHeight();
-//	SDL_RenderCopyEx(renderer, image->GetTexture()
-//		, NULL, &srcrect, a, NULL, SDL_FLIP_NONE);
-//}
+void Platform::RenderSprite(Sprite* sprite, int x, int y, float angle) {
+	RenderTexture(sprite, x, y, angle);
+}
+
+void Platform::RenderTexture(Sprite* sprite, int x, int y, double a) {
+	SDL_Rect srcrect;
+	srcrect.x = x;
+	srcrect.y = y;
+	srcrect.w = sprite->GetWidth();
+	srcrect.h = sprite->GetHeight();
+	SDL_RenderCopyEx(renderer, sprite->GetTexture()
+		, NULL, &srcrect, a, NULL, SDL_FLIP_NONE);
+}
 
 void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
 	//New SDL event called "e"

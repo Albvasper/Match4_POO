@@ -5,102 +5,134 @@
 template <class T> class List {
 
 	public:
-		Node<T>* first;
-		Node<T>* last;
-		Node<T>* tmp;
-		unsigned int size;
-		List();
-		void push_back(T val);
-		void push_front(T val);
-		void push_at(T val, int index);
-		void delete_at(int index);
-		Node<T>* get_at(int index);
-		bool search(T val);
-		void print();
+		Node<T>* first;						//Node that is at the beginning of the list
+		Node<T>* last;						//Node that is at the end of the list
+		Node<T>* tmp;						//Temporal node
+		unsigned int size;					//Int that stores the size of the list
+		List();								//Constructor
+		void push_back(T val);				//Method that inserts a new value at the end of the list
+		void push_front(T val);				//Method that inserts at the beginning of the list
+		void push_at(T val, int index);		//Method that inserts a value at a certain index
+		void delete_at(int index);			//Method that deletes a value in a certain index
+		Node<T>* get_at(int index);			//Method that returns a node in a certain index
+		bool search(T val);					//Method that returns true if it found the value in the list and false if it didnt
+		void print();						//Method that prints the content of the list
 		~List();
 };
 
 template <class T> List<T>::List() {
+	//Sets pointers to null and size to 0
 	first = nullptr;
 	last = nullptr;
+	tmp = nullptr;
 	size = 0;
 }
 
 template <class T> void List<T>::push_back(T val) {
-	if (first == NULL) { // la lista está completamente vacía
+	// If the list is empty
+	if (first == NULL) { 
 		first = new Node<T>(val);
-		last = first; // el primero y el último son el mismo
+		//The first value is also the last because theres only 1 value in the list
+		last = first; 
 		first->index = 0;
-	}
+	} 
+	//If there is only one value in the list
 	else {
-		if (first == last) { // sólo hay un elemento en la lista
-			last = new Node<T>(val); // last ahora es diferente
-			first->next = last; // el siguiente de first ahora es el nuevo nodo
+		if (first == last) {
+			last = new Node<T>(val);
+			// The next node of the first one is the new node
+			first->next = last; 
+			//The first node in the list is assigned the index 0
 			first->index = 0;
+			//The new node index is 1
 			first->next->index = 1;
-		}
-		else { // hay 2 o más elementos en la lista
-			last->next = new Node<T>(val); // last->next era null, ahora es un nodo
+		} 
+		//There are 2 or more elements in the list
+		else {
+			last->next = new Node<T>(val);
 			last->next->index = last->index + 1;
-			last = last->next; // last ahora es el nodo nuevo
+			//The new node is the last one
+			last = last->next; 
 		}
+		//The size of the list is added 1
 		size++;
 	}
 }
 
 template <class T> void List<T>::push_front(T val) {
-	if (first == NULL) { // la lista está completamente vacía
+	// If the list is empty
+	if (first == NULL) {
 		first = new Node<T>(val);
-		last = first; // el primero y el último son el mismo
+		//The first value is also the last because theres only 1 value in the list
+		last = first; 
 	}
+	//If there is only one value in the list
 	else {
-		if (first == last) { // sólo hay un elemento en la lista
+		if (first == last) {
+			//tmp stores the first element in the list
 			tmp = first;
-			first = new Node<T>(val); // last ahora es diferente
-			first->next = last; // el siguiente de first ahora es el nuevo nodo
+			//The new element is the first one
+			first = new Node<T>(val);
+			//The last element is first->next
+			first->next = last;
+			//Index are assigned
 			first->index = 0;
 			last->index = 1;
 		}
-		else { // hay 2 o más elementos en la lista
+		//There are 2 or more elements in the list
+		else {
+			//tmp stores the first element in the list
 			tmp = first;
-			first = new Node<T>(val); // last->next era null, ahora es un nodo
-			first->next = tmp; // last ahora es el nodo nuevo					
+			// The new element is the first one
+			first = new Node<T>(val);
+			//the next element is now tmp that stores first
+			first->next = tmp;					
 			first->index = -1;
-			Node<T>* it = first; // se crea un "iterador"
-			while (it != NULL) { // si el iterador no es nulo...		
-				it->index += 1;// se actualiza el iterador por el siguiente nodo en la lista
+			Node<T>* it = first;
+			//while the it isnt NULL (it will only be null at the end of the list)
+			while (it != NULL) {
+				//Updates the it for the next node in the list
+				it->index += 1;
 				it = it->next;
-				// si it->next es null, entonces it será null, y se detendrá el While.
 			}
 		}
 	}
+	//The size of the list is added 1
 	size++;
 }
 
 template <class T> void List<T>::push_at(T val, int index) {
-	if (first == NULL) { // la lista está completamente vacía
+	// If the list is empty
+	if (first == NULL) {
 		first = new Node<T>(val);
-		last = first; // el primero y el último son el mismo
+		// The first value is also the last because theres only 1 value in the list
+		last = first;
 		first->index = 0;
 		size = size + 1;
 	}
 	else {
-		if (index == 0) { //El usuario va a poner val hasta el principio
+		//The user will put val at the beginning
+		if (index == 0) {
 			tmp = first;
 			first = new Node<T>(val);
+			//The next node of first is tmp, that is storing first
 			first->next = tmp;
-			Node<T>* it = first; // se crea un "iterador"
-			while (it != NULL) { // si el iterador no es nulo...        
-				it->index += 1;// se actualiza el iterador por el siguiente nodo en la lista
+			Node<T>* it = first;
+			//while the it isnt NULL (it will only be null at the end of the list)
+			while (it != NULL) {     
+				//Updates the it for the next node in the list
+				it->index += 1;
 				it = it->next;
-				// si it->next es null, entonces it será null, y se detendrá el While.
 			}
 			size = size + 1;
 		}
-		else if (index >= last->index) { //El usuario va a poner val hasta el final
+		//User will put val at the end of the list
+		else if (index >= last->index) {
+			//Call push back method
 			push_back(val);
 		}
-		else if (index != first->index && index != last->index) { //El usuario va a poner val en medio de First y Last
+		//User will put val between "first" and "last"
+		else if (index != first->index && index != last->index) {
 			Node <T>* it = first;
 			int counter = 0;
 			while (it != NULL) {
