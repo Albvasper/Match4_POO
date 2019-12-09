@@ -12,12 +12,15 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 	this->manager = manager;
 	background = new Sprite();
 	background->LoadImage("../Assets/Sprites/Background.png");
+	SDL_Color blueC = { 8, 174, 234 };
+	text = new Text(Platform::renderer, "../Assets/Fonts/Pixeled.ttf", 45, "Draw Pixel!", blueC);
 }
 
 void Menu::Draw() {
 	//std::cout << " Menu Draw" << std::endl;
 	platform->RenderClear();
 	platform->RenderSprite(background, 0, 0, 0);
+	text->Display(10, 0, Platform::renderer);
 	platform->RenderPresent();
 }
 

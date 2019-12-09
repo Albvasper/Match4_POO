@@ -22,6 +22,5 @@ class Platform {
 		void RenderTexture(Sprite* sprite, int x, int y, double a);
 		void RenderPresent();											//Method that updates the screen with any rendering performed
 		void CheckEvent(GameState* obj, bool (GameState::* f)(int));	//Method that always checks the events that are happening
-		//void RenderTexture(Image* image, int x, int y, double a);		//Method that renders a texture
 		~Platform();													//Destructor
 };

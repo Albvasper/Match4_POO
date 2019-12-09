@@ -45,8 +45,7 @@ void Platform::RenderTexture(Sprite* sprite, int x, int y, double a) {
 	srcrect.y = y;
 	srcrect.w = sprite->GetWidth();
 	srcrect.h = sprite->GetHeight();
-	SDL_RenderCopyEx(renderer, sprite->GetTexture()
-		, NULL, &srcrect, a, NULL, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(renderer, sprite->GetTexture(), NULL, &srcrect, a, NULL, SDL_FLIP_NONE);
 }
 
 void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
