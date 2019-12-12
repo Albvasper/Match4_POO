@@ -3,7 +3,7 @@
 #include "GameStateManager.h"
 #include "Sprite.h"
 #include "Text.h"
-
+#include "Tile.h"
 class Menu : public GameState {
 
 	private:
@@ -11,6 +11,7 @@ class Menu : public GameState {
 		Sprite* background;														//Background image for the state
 		GameStateManager* manager;												//Pointer to the manager
 		Text* text;
+		Tile* tile1;
 
 	public:
 		Menu();																	//Constructor

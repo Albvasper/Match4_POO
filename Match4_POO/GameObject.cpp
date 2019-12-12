@@ -18,3 +18,6 @@ int GameObject::GetID() {
 int GameObject::GetSubID() {
 	return subArrID;
 }
+
+GameObject::~GameObject() {
+}

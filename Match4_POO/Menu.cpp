@@ -5,7 +5,6 @@ Menu::Menu() {
 
 }
 
-
 void Menu::Init(Platform* platform, GameStateManager* manager) {
 	//std::cout << " Menu Init" << std::endl;
 	this->platform = platform;
@@ -13,7 +12,9 @@ void Menu::Init(Platform* platform, GameStateManager* manager) {
 	background = new Sprite();
 	background->LoadImage("../Assets/Sprites/Background.png");
 	SDL_Color blueC = { 8, 174, 234 };
-	text = new Text(Platform::renderer, "../Assets/Fonts/Pixeled.ttf", 45, "Draw Pixel!", blueC);
+	text = new Text(platform->renderer, "../Assets/Fonts/Pixeled.ttf", 45, "Draw Pixel!", blueC);
+	tile1 = new Tile();
+	tile1->Init(1, platform);
 }
 
 void Menu::Draw() {
@@ -21,6 +22,7 @@ void Menu::Draw() {
 	platform->RenderClear();
 	platform->RenderSprite(background, 0, 0, 0);
 	text->Display(10, 0, Platform::renderer);
+	tile1->Draw(500, 500);
 	platform->RenderPresent();
 }
 

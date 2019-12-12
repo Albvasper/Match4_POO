@@ -11,9 +11,8 @@ class GameObject {
 		GameObject();
 		GameObject(int _id);
 		virtual void Update();
-		GameObject(short i) : id(i) {}
 		int GetID();
 		int GetSubID();
-		~GameObject() {}
+		~GameObject();
 };
 

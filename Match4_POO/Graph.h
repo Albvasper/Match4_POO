@@ -1,7 +1,6 @@
 #pragma once
 #include "GraphNode.h"
 #include "List.h"
-#include "GraphNode.h"
 #include "Node.h"
 
 template <class T> class Graph {
@@ -12,7 +11,6 @@ template <class T> class Graph {
 		void Insert(T val, GraphNode<T>* father);
 		Node<T>* search(T val);
 		void deleteN(T val);
-		void print();
 		~Graph();
 };
 
@@ -20,7 +18,14 @@ template <class T> Graph<T>::Graph() {
 }
 
 template <class T> void Graph<T>::Insert(T val, GraphNode<T>* father) {
-	father->children.push_back(new Node<T>(val));
+	if (father != nullptr) {
+		GraphNode<T>* child = new GraphNode<T>(val);
+		father->children.push_back(child);
+		child->fathers.push_back(father);
+	}
+	else {
+		GraphNode<T>* child = new GraphNode<T>(val);
+	}
 }
 
 template <class T> Node<T>* Graph<T>::search(T val) {
@@ -81,13 +86,6 @@ template <class T> void Graph<T>::deleteN(T val) {
 		it = it->next;
 	}
 	return NULL;
-}
-
-template <class T> void Graph<T>::print() {
-	//GraphNode<T>* it = fathers.first;
-	//for (int i = 0; i < fathers.size; i++) {
-	//	std::cout << i << ": " << it->nodeData << std::endl;
-	//}
 }
 
 template <class T> Graph<T>::~Graph() {

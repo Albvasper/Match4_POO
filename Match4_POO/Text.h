@@ -4,6 +4,7 @@
 #include <string>
 
 class Text {
+
 	private:
 		SDL_Texture* _text_texture = nullptr;
 		mutable SDL_Rect _text_rect;

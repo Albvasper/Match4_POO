@@ -1,8 +1,9 @@
 #pragma once
 #include "SDL.h"
 #include <iostream>
+#include "GameObject.h"
 
-class Sprite {
+class Sprite : public GameObject {
 	
 	private:
 		SDL_Texture* sprite;
