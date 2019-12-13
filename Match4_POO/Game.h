@@ -13,6 +13,10 @@ class Game : public GameState {
 		Sprite* background;
 		GameStateManager* manager;
 		Text* points;
+		Tile* tile1;
+		Tile* tile2;
+		Tile* tile3;
+		Tile* tile4;
 
 	public:
 		Game();

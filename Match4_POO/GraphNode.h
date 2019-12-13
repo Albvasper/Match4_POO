@@ -18,8 +18,8 @@ template <class T> GraphNode<T>::GraphNode() {
 }
 
 template <class T> GraphNode<T>::GraphNode(T val) {
-	fathers = nullptr;
-	children = nullptr;
+	/*fathers->nullptr;
+	children-> nullptr;*/
 	nodeData = val;
 	visited = false;
 }

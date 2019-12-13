@@ -1,4 +1,5 @@
 #include "Platform.h"
+#include <iostream>
 
 SDL_Renderer* Platform::renderer;
 
@@ -51,9 +52,22 @@ void Platform::RenderTexture(Sprite* sprite, int x, int y, double a) {
 void Platform::CheckEvent(GameState* obj, bool (GameState::* f)(int)) {
 	//New SDL event called "e"
 	SDL_Event e;
+	bool leftMouseButtonDown = false;
 	while (SDL_PollEvent(&e)) {
 		if (e.type == SDL_KEYDOWN) {
 			(obj->*f)(e.key.keysym.sym);
+		}
+		else if (e.type == SDL_MOUSEBUTTONUP) {
+			if (e.button.button == SDL_BUTTON_LEFT) {
+				leftMouseButtonDown = false;
+				std::cout << "arriba" << std::endl;
+			}
+		}
+		else if (e.type == SDL_MOUSEBUTTONDOWN) {
+			if (e.button.button == SDL_BUTTON_LEFT) {
+				leftMouseButtonDown = true;
+				std::cout << "abajo" << std::endl;
+			}
 		}
 	}
 }
