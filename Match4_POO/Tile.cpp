@@ -16,7 +16,7 @@ void Tile::Init(short type, Platform *_platform) {
 		break;
 
 	case 3:
-		sprite->LoadImage("../Assets/Sprites/Tile3.png");
+		sprite->LoadImage("../Assets/Sprites/Sushi3.png");
 		break;
 
 	case 4:

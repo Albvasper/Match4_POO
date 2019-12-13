@@ -4,6 +4,7 @@
 #include "Sprite.h"
 #include "Text.h"
 #include "Tile.h"
+
 class Menu : public GameState {
 
 	private:
