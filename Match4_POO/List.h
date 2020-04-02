@@ -182,7 +182,7 @@ template <class T>  Node<T>* List<T>::get_at(int index) {
 		return first;
 	}
 	else if (index == last->index) {
-		return first;
+		return last;
 	}
 	else if (index != first->index && index != last->index) {
 		Node <T>* it = first;

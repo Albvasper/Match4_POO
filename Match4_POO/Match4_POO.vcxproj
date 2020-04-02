@@ -163,7 +163,6 @@
     <ClCompile Include="GameStateManager.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="GraphNode.cpp" />
-    <ClCompile Include="Grid.cpp" />
     <ClCompile Include="HighScores.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Match4_POO.cpp" />
@@ -183,7 +182,6 @@
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="GraphNode.h" />
-    <ClInclude Include="Grid.h" />
     <ClInclude Include="HighScores.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Menu.h" />
